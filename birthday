@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: url('bg.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Centered Screens */
+        .screen {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            text-align: center;
+            width: 350px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hide Elements Initially */
+        .hidden {
+            display: none;
+        }
+
+        /* Button Styling */
+        .btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+
+        /* Input Box */
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Slide-in Animation */
+        .slide-in {
+            animation: slideIn 1.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="screen" id="enterScreen">
+        <h1 class="fade-in">🎊 hey! unbeliveble u r here</h1>
+        <button class="btn" onclick="showBirthdayMessage()">Enter</button>
+    </div>
+
+    <div class="screen hidden" id="birthdayMessage">
+        <h2 class="slide-in">🎉 huh,Wish U Happy Birthday!! Do Great In Your Life🎂</h2>
+        <button class="btn" onclick="showPrivateMessage()">Continue</button>
+    </div>
+
+    <div class="screen hidden" id="privateMessage">
+        <h3>🔒 Enter Password(your name)to for some messege or maybe u can leave its not important:</h3>
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button class="btn" onclick="checkPassword()">Submit</button>
+        <p id="messageBox" class="hidden">sorry for the last time yrr i was so rude and can't belive i said that thing to you though words are from the AI
+but it dosen matter :(...sorry for bringing back the bad memories on goodday but i cant do anything
+u know what happen that day...the only thing that is you are ready to meet me thats unbeliveble for me yaa i know that it was me who asked it but still i always expect no from you cause whom i know is never going to be say yes
+yaa its also the thing is it was only and only me jene tame haa kahi biju koi bi hoy tame haa kevanu vicharo bhi nhai ...but why even me? u know the importance of purity...i have so much respect for u and aene aam waste bhi naa karay maybe tame ae point ae vicharyu hase its normal pn for me it will be never....shyd mari overthinking 
+shyd malya hot to maja aavt mst experience malat and many things ....but i always wanna stay away from this things and tamne pn aama padva nai mangto so ...mane lagyu khbr nai aagal kya jase ne tamari life ma distraction banu to aej best lagyu dur thavu padse je directly mare kevu to possible natu to Ai no saharo lidho thodo time khotu lahyu pn pachi samjay gayu aaj best chhe tamara mate ... khabr nai aa badhu kem kau ane su impact karse 
+but javado...i think aa divso mast gaya hase thodu dedication and motivation malyu hase and aej best chhe tamara mate continiue that mare tamne succesfull thata jova chhe to please mara mate karjo ae
+next year ma good habits add karjo jem possible bane am ( book reading / extra knowlwdge /...etc) jetli wish karu aetli ochhhi j chhe..and just belive in gods plan if aemne kaik vicharyu hase to atyare nai to pachi pn thai ne j rese so dont worry...make your parents proud and happy!
+last sorry last time ae type karu to kai special na kari sakyo
+</p>
+    </div>
+
+    <script>
+        function showBirthdayMessage() {
+            document.getElementById("enterScreen").classList.add("hidden");
+            document.getElementById("birthdayMessage").classList.remove("hidden");
+        }
+
+        function showPrivateMessage() {
+            document.getElementById("birthdayMessage").classList.add("hidden");
+            document.getElementById("privateMessage").classList.remove("hidden");
+        }
+
+        function checkPassword() {
+            const password = "aarti";
+            const input = document.getElementById("passwordInput").value;
+            if (input === password) {
+                document.getElementById("messageBox").classList.remove("hidden");
+            } else {
+                alert("❌ Incorrect password! Try again.");
+            }
+        }
+    </script>
+
+</body>
+</html>
